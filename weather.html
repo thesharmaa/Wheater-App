@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <style>
+      *{
+        margin:0;
+        padding:0;
+      }
+      .mapouter {
+        position: relative;
+        text-align: right;
+        height: 500px;
+        width: 600px;
+        
+      }
+    </style>
+  
+    <style>
+      .gmap_canvas {
+        overflow: hidden;
+        background: none !important;
+        height: 500px;
+        width: 600px;
+      
+      }
+      #box {
+        display: flex;
+        justify-content: space-around;
+      }
+      #header>input{
+            display: block;
+            height:30px;
+            width:250px
+        }
+        #header>button{
+         
+            height:35px
+        }
+        #header{
+            
+            height:80px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: #7ad4ed;
+        }
+        #header>button{
+          width:80px;
+          height:42px;
+          border-radius: 5px;
+          border-color: white;
+        }
+        #header>input{
+          margin-right: 20px;
+          border-radius: 5px;
+          border-color: white;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          padding: 5px;
+          font-size: 18px;
+        }
+       #box>#container{
+        border-color: #7ad4ed;
+        background-color: rgb(213, 240, 244);
+        width:500px;
+        height: 250px;
+        text-align: center;
+       }
+       #box .mapouter{
+        background-color: rgb(213, 240, 244);
+        text-align: center;
+       }
+     
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      
+        <input type="text" id="query" placeholder="CITY NAME" />
+        <button onclick="getData()">Search</button>
+      
+    </div>
+
+    <div id="box">
+     
+      <div id="container">
+        <h1>Stats</h1>
+      </div>
+      
+      <div class="mapouter">
+        <h1>MAP</h1>
+        <div class="gmap_canvas">
+          <iframe
+            width="600"
+            height="500"
+            id="gmap_canvas"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="weather.js"></script>
